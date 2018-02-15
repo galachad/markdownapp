@@ -4,7 +4,8 @@
 #' @export
 rmdtext <- function(text){
   writeLines(text, con="input.Rmd");
-  knit2html("input.Rmd", output="output.html");
+  rmarkdown::render(input = "input.Rmd", output_file = "output.html");
   invisible();
 }
+
 
